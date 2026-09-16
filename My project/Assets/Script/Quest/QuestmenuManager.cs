@@ -2,46 +2,68 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using TMPro;
 
+//QuestÇÃíÜêgÇä«óùÇ∑ÇÈscript
 public class QuestmenuManager : MonoBehaviour
 {
     [Header("Panels")]
-    [SerializeField] private GameObject stageListPanel;
+    [SerializeField] private GameObject questCategoryPanel;
+    [SerializeField] private GameObject stageMapPanel;
+    [SerializeField] private GameObject stageDetailPanel;
     [SerializeField] private GameObject partyPanel;
+    [Header("Detail")]
+    [SerializeField] private TMP_Text stageNameText;
+    [SerializeField] private TMP_Text levelText;
+    [SerializeField] private TMP_Text rewardText;
+    private StageData selectedStage;
 
-    [Header("Party UI")]
-    [SerializeField]private TMP_Text stageNameText;
-    private string selectedStageName;
-
-    private void Start()
+    public void OpenQuestMenu()
     {
-        ShowStageList();
+        questCategoryPanel.SetActive(true);
+
+        stageMapPanel.SetActive(false);
+        stageDetailPanel.SetActive(false);
+        partyPanel.SetActive(false);
     }
 
-    public void SelectStage(string stageName)
+    public void OpenMainQuest()
     {
-        selectedStageName = stageName;
+        questCategoryPanel.SetActive(false);
 
-        stageListPanel.SetActive(false);
+        stageMapPanel.SetActive(true);
+        stageDetailPanel.SetActive(true);
+        partyPanel.SetActive(false);
+    }
+    public void OpenStageMap()
+    {
+        questCategoryPanel.SetActive(false);
+        stageMapPanel.SetActive(true);
+        stageDetailPanel.SetActive(false);
+    }
+    public void SelectStage(StageData stage)
+    {
+        selectedStage = stage;
+
+        questCategoryPanel.SetActive(false);
+        stageMapPanel.SetActive(true);
+        stageDetailPanel.SetActive(true);
+        partyPanel.SetActive(false);
+        stageNameText.text = stage.stageName;
+        levelText.text =
+            "êÑèß Lv." + stage.recommendedLevel;
+        rewardText.text =
+            stage.goldReward + " Gold";
+    }
+
+    public void OpenPartyPanel()
+    {
+        if (partyPanel == null) return;
+
+        stageMapPanel.SetActive(false);
+        stageDetailPanel.SetActive(false);
         partyPanel.SetActive(true);
-
-        if (stageNameText != null)
-            stageNameText.text = stageName;
     }
-
-    public void BackToStageList()
+    public void CloseStageDetail()
     {
-        partyPanel.SetActive(false);
-        stageListPanel.SetActive(true);
-    }
-
-    public void StartBattle()
-    {
-        SceneManager.LoadScene("MainBattle");
-    }
-
-    private void ShowStageList()
-    {
-        stageListPanel.SetActive(true);
-        partyPanel.SetActive(false);
+        stageDetailPanel.SetActive(false);
     }
 }

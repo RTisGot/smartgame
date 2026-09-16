@@ -448,6 +448,8 @@
 "Assets/Script/Player/PlayerSkill.cs"
 "Assets/Script/Player/SkillData.cs"
 "Assets/Script/Quest/QuestmenuManager.cs"
+"Assets/Script/Stage/StageButton.cs"
+"Assets/Script/Stage/StageData.cs"
 "Assets/Script/Title/TitleBlink.cs"
 "Assets/Script/Title/TitleManager.cs"
 "Assets/Script/Waiting/HomeUIManager.cs"

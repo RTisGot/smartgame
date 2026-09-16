@@ -66,6 +66,7 @@
     <Compile Include="Assets\Script\BattleUI\DamageText.cs" />
     <Compile Include="Assets\Script\Waiting\HomeUIManager.cs" />
     <Compile Include="Assets\Script\Title\TitleManager.cs" />
+    <Compile Include="Assets\Script\Stage\StageButton.cs" />
     <Compile Include="Assets\Script\Player\SkillData.cs" />
     <Compile Include="Assets\Script\Player\PlayerAttack.cs" />
     <Compile Include="Assets\Script\Player\PlayerData.cs" />
@@ -73,6 +74,7 @@
     <Compile Include="Assets\Script\camera\CameraFollowing.cs" />
     <Compile Include="Assets\Script\Weapon\WeaponData.cs" />
     <Compile Include="Assets\Script\Quest\QuestmenuManager.cs" />
+    <Compile Include="Assets\Script\Stage\StageData.cs" />
     <Compile Include="Assets\Script\BattleUI\HoldGuardInput.cs" />
     <Compile Include="Assets\Script\Player\CharacterSelectButton.cs" />
     <Compile Include="Assets\Script\Player\CharacterStats.cs" />
