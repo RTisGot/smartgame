@@ -52,6 +52,8 @@ public class QuestmenuManager : MonoBehaviour
             "êÑèß Lv." + stage.recommendedLevel;
         rewardText.text =
             stage.goldReward + " Gold";
+
+        SceneManager.LoadScene(selectedStage.sceneName);
     }
 
     public void OpenPartyPanel()
